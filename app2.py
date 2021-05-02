@@ -23,7 +23,7 @@ global option1
 def app():
 
     def upload_data(uploaded_file):
-        df = pd.read_csv(uploaded_file, sep='[;,,;]')
+        df = pd.read_csv(uploaded_file, sep=';')
         numeric_cols = list(df.select_dtypes(['float64', 'int64']).columns)
         text_data = df.select_dtypes(['object'])
         text_cols = text_data.columns
