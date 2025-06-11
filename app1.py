@@ -8,7 +8,7 @@ img4 = Image.open('images/FlowChart.png')
 def app():
     st.markdown('<h2 style="background-color:Grey; border-radius:5px; padding:5px 15px ; text-align:center ; font-family:arial;color:white">Digital-Lab</h2>', unsafe_allow_html=True)
     st.markdown('<h4 style="border: inset 1px white; border-radius:4px; padding:2px 15px">Digi-Lab : <i>Analyzer</i></h4>', unsafe_allow_html=True)
-    col1, col2 = st.beta_columns((1, 2))
+    col1, col2 = st.columns((1, 2))
     with col1:
         st.text("___" * 100)
         st.image(img, width=152)
@@ -17,8 +17,8 @@ def app():
         st.info("**_Digi-Lab_** : _Analyzer_ a digital lab for _Machine Learning_ and _Artificial Intelligence_, a place where data speaks")
         st.info("Let's dive into the world of Data !!")
     st.text("___" * 100)
-    col3 = st.beta_columns(1)
-    with st.beta_expander("Learning Vector Quantisation : LVQ"):
+    col3 = st.columns(1)
+    with st.expander("Learning Vector Quantisation : LVQ"):
         st.write('''<p>Learning Vector Quantization (LVQ) is a Competitive network which uses supervised learning. It applies a winner-take-all Hebbian learning-based approach. Learning vector quantization (LVQ) is a family of algorithms for statistical pattern classification, which aims at learning prototypes (codebook vectors) representing class regions. 
         The class regions are defined by hyperplanes between prototypes, yielding Voronoi partitions. In the late 1980s, TeuvoKohonen introduced the algorithm LVQ1 and over the years produced several variants. 
         Since their inception, LVQ algorithms have been researched by a small but active community. A search on the ISI Web of Science in November, 2013, found 665 journal articles with the keywords ‘‘learning vector quantization’’ or ‘‘LVQ’’ in their titles or abstracts.</p>
@@ -57,7 +57,7 @@ def app():
             • Maximum number of epochs reached.
             • Learning rate reduced to a negligible value.
         </pre>''', unsafe_allow_html=True)
-    with st.beta_expander("Probabilistic Neural Network (PNN)"):
+    with st.expander("Probabilistic Neural Network (PNN)"):
         st.write('''<p>A probabilistic Neural Network(PNN) is a supervised artificial neural network. PNN works on non-parametric techniques such as parzen window, Gaussian function, potential function. 
         The PNN neural networks consist of four layers i.e. input layer, pattern layer, summation layer, and output layer. The Input layer simply supplies the same input unit to all the pattern layers. A Gaussian function is present in the pattern layer. 
         The summation layer simply sums the output from the second layer for each class. The output layer performs a vote, selecting the largest value.</p>''', unsafe_allow_html=True)
@@ -73,7 +73,7 @@ def app():
         4.Output layer    : The output layer performs a vote, selecting the largest value. The associated class label is then determined.</pre>
         ''', unsafe_allow_html=True)
         st.image(img3,use_column_width=True)
-    with st.beta_expander("Methodology"):
+    with st.expander("Methodology"):
         st.write('''<p>The methodology is the core component of any research-related work. The methods used to gain the results are shown in the methodology. 
         Here, the whole research implementation is done using python. There are different steps involved to get the entire research work done which is as follows:</p>''',unsafe_allow_html=True)
         st.image(img4, use_column_width=True)
