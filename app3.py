@@ -5,7 +5,7 @@ import pandas as pd
 def app():
     st.title('Performance Prediction')
     st.write('Enter Details:')
-    col1, col2, col3 = st.beta_columns((1, 1, 1))
+    col1, col2, col3 = st.columns((1, 1, 1))
     Lvq_net = pd.read_pickle("lvq_ml_model1.pickle")
 
     def format_func1(options):
