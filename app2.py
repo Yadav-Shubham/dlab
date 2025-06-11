@@ -30,8 +30,8 @@ def app():
         return df, numeric_cols, text_cols
     st.subheader('Visualization')
     st.info('Exploring the world of Machine Learning and Artificial Intelligence with the magic of data')
-    with st.beta_expander("Upload"):
-        col1, col2 = st.beta_columns(2)
+    with st.expander("Upload"):
+        col1, col2 = st.columns(2)
         with col1:
             uploaded_file = st.file_uploader(label="Upload your csv file:", type=['csv', 'xlsx'])
             if uploaded_file is not None:
@@ -58,8 +58,8 @@ def app():
                 st.error("Please Upload a File")
         except Exception as e:
             print('')
-    with st.beta_expander("Let's Visualise"):
-        col3, col4 = st.beta_columns((1, 3))
+    with st.expander("Let's Visualise"):
+        col3, col4 = st.columns((1, 3))
         if uploaded_file is not None:
             with col3:
                 chart_select = st.selectbox(label="Select the chart-type", options=[
@@ -163,11 +163,11 @@ def app():
         else:
             st.error("Please upload file in 'Upload' section")
     st.subheader("Pre-processing, Spliting, Training")
-    col6, col7, col8 = st.beta_columns((1, 1, 1))
-    col9, col10 = st.beta_columns((6, 1))
+    col6, col7, col8 = st.columns((1, 1, 1))
+    col9, col10 = st.columns((6, 1))
     if uploaded_file is not None:
         with col6:
-            pg = st.beta_expander("Preprocessing")
+            pg = st.expander("Preprocessing")
             with pg:
                 ppd = st.checkbox(label="Preprocess-data")
                 if ppd:
@@ -274,7 +274,7 @@ def app():
                     dp.empty()
 
         with col7:
-            sg = st.beta_expander("Splitting")
+            sg = st.expander("Splitting")
             with sg:
                 sd = st.checkbox(label="Splitting Training Data")
                 if sd:
@@ -283,7 +283,7 @@ def app():
                     xTrain, xTest, yTrain, yTest = train_test_split(X, Y, test_size=test_size, random_state=random_state)
 
         with col8:
-            tdd = st.beta_expander("Train")
+            tdd = st.expander("Train")
             with tdd:
                 classifier_name = st.selectbox("Select Classifier :", ("LVQ", "PNN"))
                 if classifier_name == "LVQ":
